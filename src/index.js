@@ -162,7 +162,8 @@ function create() {
 
   this.physics.add.overlap(player, groupe_etoiles, ramasserEtoile, null, this);
 
-  zone_texte_score = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+  zone_texte_score = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fff' });
+  zone_texte_score.setScrollFactor(0);
 
   groupe_bombes = this.physics.add.group();
   this.physics.add.collider(groupe_bombes, groupe_plateformes);
@@ -279,7 +280,9 @@ function hit (uneBalle, uneCible) {
 function hit (bullet, cible) {
   cible.pointsVie--;
   if (cible.pointsVie==0) {
-    cible.destroy(); 
+    cible.destroy();
+    score += 10;
+    zone_texte_score.setText("Score:" + score);
   } 
    bullet.destroy();
 }  
