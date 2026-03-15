@@ -19,7 +19,7 @@ export default class Selection extends Phaser.Scene {
 
 preload() {
   this.load.image("img_ciel", "src/assets/sky.png");
-  this.load.image("img_plateforme", "src/assets/platform.png");
+  this.load.image("img_plateform", "src/assets/platform.png");
   this.load.spritesheet("img_perso", "src/assets/dude.png", {
     frameWidth: 32,
     frameHeight: 48
@@ -35,6 +35,11 @@ preload() {
 
   this.load.image("bullet", "src/assets/balle.png");
   this.load.image("cible", "src/assets/cible.png");
+
+  this.load.image('plateforme_espace', 'src/assets/plateforme_espace.png');
+  this.load.image('ciel_desert', 'src/assets/ciel_desert.png');
+  this.load.image('nuages_desert', 'src/assets/nuages_desert.png');
+  this.load.image('fond_espace', 'src/assets/fond_espace.png');
 }
 
 create() {

@@ -7,13 +7,20 @@ export default class niveau1 extends Phaser.Scene {
       key: "niveau1" //  ici on précise le nom de la classe en tant qu'identifiant
     });
   }
-  preload() {}
+  preload() {
+    this.load.image('fond_espace', 'src/assets/fond_espace.png');
+    this.load.image("img_plateform", "src/assets/platform.png");
+    this.load.spritesheet("img_perso", "src/assets/dude.png", {
+      frameWidth: 32,
+      frameHeight: 48
+    });
+  }
 
   create() {
-    this.add.image(400, 300, "img_ciel");
+    this.add.image(400, 300, 'fond_espace');
     this.groupe_plateformes = this.physics.add.staticGroup();
-    this.groupe_plateformes.create(200, 584, "img_plateforme");
-    this.groupe_plateformes.create(600, 584, "img_plateforme");
+    this.groupe_plateformes.create(200, 584, "img_plateform");
+    this.groupe_plateformes.create(600, 584, "img_plateform");
     // ajout d'un texte distintcif  du niveau
     this.add.text(400, 100, "Vous êtes dans le niveau 1", {
       fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
